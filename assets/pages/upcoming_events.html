@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming_Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/style/styles.css"> <!-- Tu archivo de estilos personalizado -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="app">
+
+        <header>
+
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="../../assets/images/amazing_brand.png" alt="logo" width="80" height="24">
+                    </a>
+
+                    <div class="ml-auto">
+
+                        <button class="navbar-toggler end-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <div class="navbar-nav mb-2 mb-lg-0 mt-2">
+                                <a href="../../index.html" class="btn btn-outline-success me-2">Home</a>
+                                <a href="#" class="btn btn-outline-success me-2  link-activo">Upcoming Events</a>
+                                <a href="../../assets/pages/past_events.html" class="btn btn-outline-success me-2">Past
+                                    Events</a>
+                                <a href="../../assets/pages/contact.html"
+                                    class="btn btn-outline-success me-2">Contact</a>
+                                <a href="../../assets/pages/stats.html" class="btn btn-outline-success me-2">Stats</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+
+            <div id="banner" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#banner" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#banner" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#banner" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#banner" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active data-bs-interval=100">
+                            <img src="../../assets/images/optional_banner_1.jpg"
+                                class="d-block w-100 alto-imagen object-fit-cover" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Food Fair</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-item data-bs-interval=100">
+                            <img src="../../assets/images/optional_banner_2.jpg"
+                                class="d-block w-100 alto-imagen object-fit-cover" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Cinema</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-item data-bs-interval=100">
+                            <img src="../../assets/images/optional_banner_3.jpg"
+                                class="d-block w-100 alto-imagen object-fit-cover" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Museum</h3>
+
+                            </div>
+                        </div>
+
+                        <div class="carousel-item data-bs-interval=100">
+                            <img src="../../assets/images/optional_banner_4.jpg"
+                                class="d-block w-100 alto-imagen object-fit-cover" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Costume Party</h3>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item data-bs-interval=100">
+                            <img src="../../assets/images/optional_banner_5.jpg"
+                                class="d-block w-100 alto-imagen object-fit-cover" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Music Concert</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class=" row bg-info-subtle p-0 m-0">
+                <h1 class="text-center">Upcoming Events</h1>
+            </div>
+
+        </header>
+
+        <main class="container-fluid pb-1">
+
+            <div class="row p-3">
+                <div class="col-md-6 pt-2  align-content-start">
+
+                    <div class="row" id="contenedor-checkboxes">
+                        <template v-for="checkBox of checkBoxes">
+                            <div class="form-check form-switch col-12 col-sm-12 col-md-5">
+                                <input v-model="checkBoxesSeleccionados" class="form-check-input" type="checkbox"
+                                    role="switch" :id="checkBox" :value="checkBox">
+                                <label class="form-check-label" :for="checkBox">{{checkBox}}</label>
+                            </div>
+                        </template>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 align-content-start pt-2">
+
+                    <div class="row">
+                        {{ filtroCruzado }}
+                        <input v-model="texto" id="texto" class="form-control" type="text" placeholder="Buscar Evento">
+                    </div>
+
+                    <div id="mensajeNoResultados" style="display: none;">
+                        <p>No se encontraron resultados que cumplan con la condición de filtro.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row gap-3 justify-content-center pd-2 mb-3" id="contenedor_tarjetas">
+                <template v-for="evento of eventosParaCard">
+                    <div class="card col-md-3">
+
+                        <img :src="evento.image" class="card-img card-img-top mt-1 object-fit-cover"
+                            alt={{evento.name}}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{evento.name}}</h5>
+                            <p class="card-text">{{evento.description}}</p>
+
+                            <div class="row">
+
+                                <div class="col-3 p-0">
+                                    <h4 class="mb-0">Date</h4>
+                                </div>
+
+                                <div class="col-5 justify-content-center d-flex p-md-2 pt-1 justify-content-md-start">
+                                    <h6 class="mb-0">{{evento.date}}</h6>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-3 p-0">
+                                    <h4 class="mb-0">Price</h4>
+                                </div>
+
+                                <div class="col-4 justify-content-center d-flex p-md-2 pt-1 justify-content-md-start">
+                                    <h6 class="mb-0">U$S {{evento.price}}</h6>
+                                </div>`
+
+                                <div class="col-4">
+                                    <a :href="'../../assets/pages/details.html?id='+evento._id" class="btn btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </template>
+                <!-- <h3 class="display-1 text-danger fw-bolder text-center h-100" v-show="personajes.length == 0">No se encontraron elementos para mostrar</h3> -->
+            </div>
+
+        </main>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../../assets/images/facebook.png"
+                            alt="Twitter" width="24" height="24"></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../../assets/images/instagram.png"
+                            alt="Instagram" width="24" height="24"></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../../assets/images/whatsapp.png"
+                            alt="Facebook" width="24" height="24"></a></li>
+            </ul>
+            
+    </footer>
+
+</div>
+
+    <!-- <script src="../../assets/js/data.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="../../assets/js/index.js"></script>
+
+</body>
+
+</html>
