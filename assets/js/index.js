@@ -1,29 +1,3 @@
-// const persona = {
-//     nombre: 'Eduardo',
-//     apellido: 'Mendoza',
-//     saludar(){
-//         console.log('Hola me llamo Edu Mendoza');
-//     },
-//     saludoDoble(){
-//         this.saludar()
-//     }
-// }
-
-
-// const { nombre, apellido, saludar } = persona
-
-// /* console.log(persona);
-// console.log(persona.nombre);
-// console.log(persona.apellido); */
-
-// console.log(nombre);
-// console.log(apellido);
-
-// saludar()
-
-
-
-
 
 const { createApp } = Vue
 

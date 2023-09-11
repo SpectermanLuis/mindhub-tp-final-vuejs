@@ -147,10 +147,12 @@
             {{ filtroCruzado }}
             <input v-model="texto" id="texto" class="form-control" type="text" placeholder="Buscar Evento">
           </div>
-
-          <div id="mensajeNoResultados" style="display: none;">
+  
+         <template v-if="eventosParaCard.length == 0">
+          <div id="mensajeNoResultados">
             <p>No se encontraron resultados que cumplan con la condición de filtro.</p>
           </div>
+        </template>   
 
         </div>
 
@@ -195,7 +197,7 @@
           </div>
 
         </template>
-        <!-- <h3 class="display-1 text-danger fw-bolder text-center h-100" v-show="personajes.length == 0">No se encontraron elementos para mostrar</h3> -->
+        <!-- <h3 class="display-1 text-danger fw-bolder text-center h-100" v-show="personajes.length == 0">No se encontraron Eventos para mostrar</h3> -->
       </div>
 
     </main>
